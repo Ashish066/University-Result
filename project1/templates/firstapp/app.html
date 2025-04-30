@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>UNIVERSITY RESULT</title>
+    <link rel="stylesheet" href="{% static "css/app.css" %}">
+  </head>
+  <body>
+    <h1>STUDENT RESULT</h1><hr>
+
+    {% if std_list %}
+      <div class="ttt">
+        <table class="tlb">
+          <thead>
+            <th> STUDENT NAME</th>
+            <th>ROLL NO.</th>
+            <th>MARKS</th>
+          </thead>
+          {% for std in std_list %}
+            <tr>
+              <td>{{std.name}}</td>
+              <td>{{std.roll_no}}</td>
+              <td>{{std.marks}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+       </div>
+        {% else %}
+          <h2>No Record Found !!!</h2>
+      {% endif %}
+  </body>
+</html>
